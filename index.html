@@ -116,8 +116,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <img src="./static/images/headliner_2.png" alt="COBALT Headliner Image">
-            <h2 class="subtitle has-text-centered">
+            <img src="./static/images/headliner_2.png" alt="COBALT Headliner Image" style="border-radius:10px">
+            <h2 class="has-text-centered">
               <span class="dnerf">Cobalt</span> can be used to collect data across a variety of both simulated and real-world environments, including bimanual tasks.
             </h2>
           </div>
@@ -216,17 +216,17 @@
                 <span class="dnerf">Cobalt</span> is a scalable, cloud-based data collection platform that enables users worldwide to remotely teleoperate simulated and real robots. By leveraging low-latency networking, diverse input devices, multiple simulation frameworks, and real-world teleoperation capabilities, <span class="dnerf">Cobalt</span> facilitates large-scale crowdsourcing and democratizes the creation of high-quality robotics datasets. At the core of <span class="dnerf">Cobalt</span> is a robust cloud-based architecture designed for scalability and efficiency.
               </p>
               <p>
-                Users can use a variety of input devices including both Android and iOS smartphones, Quest 3 VR headsets, 3D mice, keyboards, and more. When the user connects to the main <span class="dnerf">Cobalt</span> server, a load balancer routes them to the task group that corresponds to the task that the user selected. Each task group can dynamically provision virtual machines based on the general user demand.
+                Users can use a variety of input devices including <strong>both Android and iOS smartphones</strong>, Quest 3 VR headsets, 3D mice, keyboards, and more. When the user connects to the main <span class="dnerf">Cobalt</span> server, a load balancer routes them to the task group that corresponds to the task that the user selected. Each task group can dynamically provision virtual machines based on the general user demand.
               </p>
               <p>
-                Each virtual machine consists of three primary services that communicate via an in-memory Redis data store. The client session service, or CS, ingests client data at 20 Hz and publishes the pose commands to the Redis store. The teleoperation service, or TS, leverages vectorized simulation environments to step through multiple independent simulation instances concurrently on a single GPU. It pulls the latest pose command update from the Redis store, steps the simulation, and publishes camera renders back to the Redis store. Finally, the media service, or MS, subscribes to the camera renders and uses a low-latency WebRTC connection to send the video feed to the user's streaming device.
+                Each virtual machine consists of three primary services that communicate via an in-memory Redis data store. The <strong>client session service</strong>, or CS, ingests client data at 20 Hz and publishes the pose commands to the Redis store. The <strong>teleoperation service</strong>, or TS, leverages vectorized simulation environments to step through multiple independent simulation instances concurrently on a single GPU. It pulls the latest pose command update from the Redis store, steps the simulation, and publishes camera renders back to the Redis store. Finally, the <strong>media service</strong>, or MS, subscribes to the camera renders and uses a low-latency WebRTC connection to send the video feed to the user's streaming device.
               </p>
               <p>
-                By using such a modular and adaptable approach, <span class="dnerf">Cobalt</span> remains highly scalable and efficient. We consistently achieve sub-100 ms end-to-end latency for users and demonstrated concurrent support for 256 users across 8 GPUs.
+                By using such a modular and adaptable approach, <span class="dnerf">Cobalt</span> remains highly scalable and efficient. We consistently achieve <strong>sub-100 ms end-to-end latency</strong> and demonstrated <strong>concurrent support for 256 users across 8 GPUs</strong>.
               </p>
             </div>
             <img src="./static/images/sys_arch.png" alt="COBALT System Architecture Diagram">
-            <h2 class="subtitle has-text-centered">
+            <h2 class="has-text-centered">
               <span class="dnerf">Cobalt</span> System Architecture.
               <strong>a)</strong> Cloud provider hosts one group of virtual machines (VM) per task, with dynamic allocation of servers based on demand.
               <strong>b)</strong> A load balancer sits in front of the different groups of servers, functioning as a rate limiter and revese proxy.
@@ -251,15 +251,15 @@
             <h2 class="title is-3">Training Curriculum</h2>
             <div class="content has-text-justified">
               <p>
-                To ensure users are prepared for teleoperating simulated robots using <span class="dnerf">Cobalt</span> and to evaluate the effectiveness of different input modalities, we developed a training curriculum consisting of calibration and evaluation tasks with the MuJoCo simulation environment.
+                To ensure users are prepared for teleoperating simulated robots using <span class="dnerf">Cobalt</span> and to evaluate the effectiveness of different input modalities, we developed a <strong>training curriculum consisting of calibration and evaluation tasks</strong> with the MuJoCo simulation environment.
                 The calibration tasks are designed to familiarize users with basic controls, ensuring they can collect high-quality demonstration data. The position (top left), rotation (bottom left), and pose (top right) tasks ensure that users acquire these fundamental skills.
                 Evaluation tasks introduce accuracy and precision measurements as well as time limits. They also progressively increase in difficulty with each round. The beam task (bottom right) is added to the evaluation task suite. We evaluate trajectories for evaluation tasks using our metrics to assess user data quality.
               </p>
             </div>
-            <video id="training" autoplay muted loop playsinline height="100%">
+            <video id="training" autoplay muted loop playsinline height="100%" style="border-radius:10px">
               <source src="./static/videos/training.mp4" type="video/mp4">
             </video>
-            <h2 class="subtitle has-text-centered">
+            <h2 class="has-text-centered">
               <span class="dnerf">Cobalt</span> features calibration and evaluation tasks to accelerate user onboarding and boost data quality.
             </h2>
           </div>
@@ -274,11 +274,11 @@
               </p>
             </div>
             <img src="./static/images/curriculum.png" alt="COBALT Curriculum Bar Chart">
-            <h2 class="subtitle has-text-centered">
+            <h2 class="has-text-centered">
               Completing the training curriculum significantly decreases the reset rate during data collection across all input devices.
             </h2>
             <img src="./static/images/table.png" alt="COBALT Input Device Comparison Table">
-            <h2 class="subtitle has-text-centered">
+            <h2 class="has-text-centered">
               Various metrics demonstrate that smartphones are the best input device for scalable data collection.
             </h2>
           </div>
@@ -289,13 +289,67 @@
             <h2 class="title is-3">Pilot Dataset</h2>
             <div class="content has-text-justified">
               <p>
-                We used statistically significant results from the small-scale user study to guide the design of a large-scale, crowdsourced pilot dataset. We created six environments in Isaac Lab that holistically capture the range of skills we believe useful manipulators should exhibit. For example, our tasks were designed to require precision movement, large rotations, and long-horizon planning for successful completion. The tasks are Assembly (top left), Lift (top middle), Cleanup (top right), Kitchen (bottom left), Stach (bottom middle), and Pour (bottom right).
+                We used statistically significant results from the small-scale user study to guide the design of a large-scale, crowdsourced pilot dataset. We <strong>created six environments in Isaac Lab</strong> that holistically capture the range of skills we believe useful manipulators should exhibit. For example, our tasks were designed to require precision movement, large rotations, and long-horizon planning for successful completion. The tasks are Assembly (top left), Lift (top middle), Cleanup (top right), Kitchen (bottom left), Stach (bottom middle), and Pour (bottom right).
               </p>
             </div>
-            <img src="./static/images/dataset_tasks.png" alt="COBALT Dataset Tasks">
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf">Cobalt</span> tasks used for the pilot dataset.
-            </h2>
+
+            <div class="columns is-centered">
+              <div class="column is-centered">
+                <div class="video-container">
+                  <video id="lift" autoplay muted loop playsinline height="100%" style="border-radius:10px">
+                    <source src="./static/videos/lift.mp4" type="video/mp4">
+                  </video>
+                  <p>Lift</p>
+                </div>
+              </div>
+
+              <div class="column is-centered">
+                <div class="video-container">
+                  <video id="assembly" autoplay muted loop playsinline height="100%" style="border-radius:10px">
+                    <source src="./static/videos/assembly.mp4" type="video/mp4">
+                  </video>
+                  <p>Assembly</p>
+                </div>
+              </div>
+
+              <div class="column is-centered">
+                <div class="video-container">
+                  <video id="cleanup" autoplay muted loop playsinline height="100%" style="border-radius:10px">
+                    <source src="./static/videos/cleanup.mp4" type="video/mp4">
+                  </video>
+                  <p>Cleanup</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="columns is-centered">
+              <div class="column is-centered">
+                <div class="video-container">
+                  <video id="stack" autoplay muted loop playsinline height="100%" style="border-radius:10px">
+                    <source src="./static/videos/stack.mp4" type="video/mp4">
+                  </video>
+                  <p>Stack</p>
+                </div>
+              </div>
+
+              <div class="column is-centered">
+                <div class="video-container">
+                  <video id="pour" autoplay muted loop playsinline height="100%" style="border-radius:10px">
+                    <source src="./static/videos/pour.mp4" type="video/mp4">
+                  </video>
+                  <p>Pour</p>
+                </div>
+              </div>
+
+              <div class="column is-centered">
+                <div class="video-container">
+                  <video id="kitchen" autoplay muted loop playsinline height="100%" style="border-radius:10px">
+                    <source src="./static/videos/kitchen.mp4" type="video/mp4">
+                  </video>
+                  <p>Kitchen</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -304,13 +358,13 @@
             <h2 class="title is-3">Real-World Data Collection</h2>
             <div class="content has-text-justified">
               <p>
-                The <span class="dnerf">Cobalt</span> teleoperation pipeline was validated on a physical Franka Panda arm using the Polymetis control library. We achieved low-latency, real-time control by configuring our system to allow a direct connection to a local Polymetis server. Operators guided the Panda through a standard Lift task and we then trained a BC-RNN policy on this data, confirming that phone-based teleoperation generalizes effectively from simulation to real-world hardware with minimal configuration.
+                The <span class="dnerf">Cobalt</span> teleoperation pipeline was <strong>validated on a physical Franka Panda arm</strong> using the Polymetis control library. We achieved low-latency, real-time control by configuring our system to allow a direct connection to a local Polymetis server. Operators guided the Panda through a standard Lift task and we then trained a BC-RNN policy on this data, confirming that phone-based teleoperation generalizes effectively from simulation to real-world hardware with minimal configuration.
               </p>
             </div>
-            <video id="training" autoplay muted loop playsinline height="100%">
+            <video id="training" autoplay muted loop playsinline height="100%" style="border-radius:10px">
               <source src="./static/videos/data_collection.mp4" type="video/mp4">
             </video>
-            <h2 class="subtitle has-text-centered">
+            <h2 class="has-text-centered">
               <span class="dnerf">Cobalt</span> can be used to teleoperate physical robots.
             </h2>
           </div>
