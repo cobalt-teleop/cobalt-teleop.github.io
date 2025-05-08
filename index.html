@@ -141,7 +141,7 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="publication-video">
-              <iframe src="https://www.youtube.com/embed/2yJgwwDcgV8?rel=0&amp;showinfo=0"
+              <iframe src="https://www.youtube.com/embed/vdlnIP0cmCY?rel=0&amp;showinfo=0"
                       frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
@@ -159,10 +159,10 @@
                 <span class="dnerf">Cobalt</span> is a scalable, cloud-based data collection platform that enables users worldwide to remotely teleoperate simulated and real robots. By leveraging low-latency networking, diverse input devices, multiple simulation frameworks, and real-world teleoperation capabilities, <span class="dnerf">Cobalt</span> facilitates large-scale crowdsourcing and democratizes the creation of high-quality robotics datasets. At the core of <span class="dnerf">Cobalt</span> is a robust cloud-based architecture designed for scalability and efficiency.
               </p>
               <p>
-                Users can use a variety of input devices including <strong>both Android and iOS smartphones</strong>, Quest 3 VR headsets, 3D mice, keyboards, and more. When the user connects to the main <span class="dnerf">Cobalt</span> server, a load balancer routes them to the task group that corresponds to the task that the user selected. Each task group can dynamically provision virtual machines based on the general user demand.
+                When a user connects to the main COBALT server, a load balancer routes them to the task group that corresponds to the requested task. Each task group can <strong>dynamically provision virtual machines</strong> based on demand.
               </p>
               <p>
-                Each virtual machine consists of three primary services that communicate via an in-memory Redis data store. The <strong>client session service</strong>, or CS, ingests client data at 20 Hz and publishes the pose commands to the Redis store. The <strong>teleoperation service</strong>, or TS, leverages vectorized simulation environments to step through multiple independent simulation instances concurrently on a single GPU. It pulls the latest pose command update from the Redis store, steps the simulation, and publishes camera renders back to the Redis store. Finally, the <strong>media service</strong>, or MS, subscribes to the camera renders and uses a low-latency WebRTC connection to send the video feed to the user's streaming device.
+                Each virtual machine runs three services connected via Redis: the client session service ingests client data and publishes pose commands, the teleoperation service steps the simulation and generates camera renders, and the media service streams these renders to the user via low-latency WebRTC.
               </p>
               <p>
                 By using such a modular and adaptable approach, <span class="dnerf">Cobalt</span> remains highly scalable and efficient. We consistently achieve <strong>sub-100 ms end-to-end latency</strong> and demonstrated <strong>concurrent support for 256 users across 8 GPUs</strong>.
@@ -232,7 +232,7 @@
             <h2 class="title is-3">Pilot Dataset</h2>
             <div class="content has-text-justified">
               <p>
-                We used statistically significant results from the small-scale user study to guide the design of a large-scale, crowdsourced pilot dataset. We <strong>created six environments in Isaac Lab</strong> that holistically capture the range of skills we believe useful manipulators should exhibit. For example, our tasks were designed to require precision movement, large rotations, and long-horizon planning for successful completion. The tasks are Assembly (top left), Lift (top middle), Cleanup (top right), Kitchen (bottom left), Stach (bottom middle), and Pour (bottom right).
+                We used statistically significant results from the small-scale user study to guide the design of a large-scale, crowdsourced pilot dataset. We <strong>created six environments in Isaac Lab</strong> that holistically capture the range of skills we believe useful manipulators should exhibit. For example, our tasks were designed to require precision movement, large rotations, and long-horizon planning for successful completion. Successful BC model (ACT or Diffusion Policy) rollouts for each task are shown below.
               </p>
             </div>
 
