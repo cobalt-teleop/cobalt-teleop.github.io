@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
+    <link rel="icon" href="./static/images/favicon.ico">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -30,9 +30,9 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">COBALT: Crowdsourcing Robot Learning via Cloud-Based Teleoperation with Smartphones</h1>
+              <h1 class="title is-1 publication-title"><span style="color: #0047AB;">COBALT</span>: Crowdsourcing Robot Learning via Cloud-Based Teleoperation with Smartphones</h1>
               <!-- <div class="is-size-5 publication-authors">
-                <span class="author-block">
+              <span class="author-block">
                   <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
                 <span class="author-block">
                   <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
@@ -79,7 +79,7 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    <a href="https://www.youtube.com/watch?v=vdlnIP0cmCY"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-youtube"></i>
@@ -88,7 +88,7 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://github.com/github/.github"
+                    <a href="https://github.com/cobalt-teleop/cobalt-teleop.github.io"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
@@ -104,6 +104,7 @@
                       </span>
                       <span>Data</span>
                     </a>
+                  </span>
                 </div>
               </div> -->
             </div>
@@ -116,9 +117,9 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <img src="./static/images/headliner_2.png" alt="COBALT Headliner Image" style="border-radius:10px">
+            <img src="./static/images/headliner.png" alt="COBALT Headliner Image" style="border-radius:10px">
             <h2 class="has-text-centered">
-              <span class="dnerf">Cobalt</span> can be used to collect data across a variety of both simulated and real-world environments, including bimanual tasks.
+              <span class="dnerf" style="color: #0047AB;">Cobalt</span> can be used to collect data across a variety of both simulated and real-world environments, including bimanual tasks.
             </h2>
           </div>
         </div>
@@ -132,7 +133,7 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                The scarcity of large-scale, high-quality demonstration data remains a bottleneck in scaling imitation learning for robotic manipulation. We present <span class="dnerf">Cobalt</span>, a teleoperation platform designed to alleviate this bottleneck and democratize robot learning at scale both in simulation and in the real world. By leveraging vectorized environments, our scalable, load-balanced infrastructure supports concurrent teleoperation by multiple users on a single GPU. Operators can connect from nearly anywhere on Earth using commonly available devices, including single- or dual-smartphones, VR headsets, 3D mice, and keyboards. An in-memory data cache and WebRTC video streaming keep control and rendering synchronous, sustaining dozens of concurrent users at 20 Hz with sub-100 ms end-to-end latency. We demonstrate concurrent support for 256 clients across 8 GPUs, underscoring the system's ability to scale both horizontally across hardware and within individual servers. We perform a comprehensive user study showing that phone-based teleoperation performs comparably or better than specialized hardware, enabling faster, more ergonomic data collection. To ensure data quality, <span class="dnerf">Cobalt</span> logs a suite of real-time metrics to filter suboptimal demonstrations automatically. We further demonstrate that a structured user training curriculum significantly improves task success and downstream behavior cloning performance. Guided by insights from our user study, we crowdsource the collection of a large-scale, high-quality pilot dataset with 7500+ demonstrations (50+ hours) collected with smartphones across nine countries over 5 days. We validate its quality by training state-of-the-art imitation learning algorithms.
+                The scarcity of large-scale, high-quality demonstration data remains a bottleneck in scaling imitation learning for robotic manipulation. We present <span class="dnerf" style="color: #0047AB;">Cobalt</span>, a teleoperation platform designed to alleviate this bottleneck and democratize robot learning at scale both in simulation and in the real world. By leveraging vectorized environments, our scalable, load-balanced infrastructure supports concurrent teleoperation by multiple users on a single GPU. Operators can connect from nearly anywhere on Earth using commonly available devices, including single- or dual-smartphones, VR headsets, 3D mice, and keyboards. An in-memory data cache and WebRTC video streaming keep control and rendering synchronous, sustaining dozens of concurrent users at 20 Hz with sub-100 ms end-to-end latency. We demonstrate concurrent support for 256 clients across 8 GPUs, underscoring the system's ability to scale both horizontally across hardware and within individual servers. We perform a comprehensive user study showing that phone-based teleoperation performs comparably or better than specialized hardware, enabling faster, more ergonomic data collection. To ensure data quality, <span class="dnerf" style="color: #0047AB;">Cobalt</span> logs a suite of real-time metrics to filter suboptimal demonstrations automatically. We further demonstrate that a structured user training curriculum significantly improves task success and downstream behavior cloning performance. Guided by insights from our user study, we crowdsource the collection of a large-scale, high-quality pilot dataset with 7500+ demonstrations (50+ hours) collected with smartphones across nine countries over 5 days. We validate its quality by training state-of-the-art imitation learning algorithms.
               </p>
             </div>
           </div>
@@ -156,7 +157,7 @@
             <h2 class="title is-3">System Architecture</h2>
             <div class="content has-text-justified">
               <p>
-                <span class="dnerf">Cobalt</span> is a scalable, cloud-based data collection platform that enables users worldwide to remotely teleoperate simulated and real robots. By leveraging low-latency networking, diverse input devices, multiple simulation frameworks, and real-world teleoperation capabilities, <span class="dnerf">Cobalt</span> facilitates large-scale crowdsourcing and democratizes the creation of high-quality robotics datasets. At the core of <span class="dnerf">Cobalt</span> is a robust cloud-based architecture designed for scalability and efficiency.
+                <span class="dnerf" style="color: #0047AB;">Cobalt</span> is a scalable, cloud-based data collection platform that enables users worldwide to remotely teleoperate simulated and real robots. By leveraging low-latency networking, diverse input devices, multiple simulation frameworks, and real-world teleoperation capabilities, <span class="dnerf" style="color: #0047AB;">Cobalt</span> facilitates large-scale crowdsourcing and democratizes the creation of high-quality robotics datasets. At the core of <span class="dnerf" style="color: #0047AB;">Cobalt</span> is a robust cloud-based architecture designed for scalability and efficiency.
               </p>
               <p>
                 When a user connects to the main COBALT server, a load balancer routes them to the task group that corresponds to the requested task. Each task group can <strong>dynamically provision virtual machines</strong> based on demand.
@@ -165,12 +166,12 @@
                 Each virtual machine runs three services connected via Redis: the client session service ingests client data and publishes pose commands, the teleoperation service steps the simulation and generates camera renders, and the media service streams these renders to the user via low-latency WebRTC.
               </p>
               <p>
-                By using such a modular and adaptable approach, <span class="dnerf">Cobalt</span> remains highly scalable and efficient. We consistently achieve <strong>sub-100 ms end-to-end latency</strong> and demonstrated <strong>concurrent support for 256 users across 8 GPUs</strong>.
+                By using such a modular and adaptable approach, <span class="dnerf" style="color: #0047AB;">Cobalt</span> remains highly scalable and efficient. We consistently achieve <strong>sub-100 ms end-to-end latency</strong> and demonstrated <strong>concurrent support for 256 users across 8 GPUs</strong>.
               </p>
             </div>
             <img src="./static/images/sys_arch.png" alt="COBALT System Architecture Diagram">
             <h2 class="has-text-centered">
-              <span class="dnerf">Cobalt</span> System Architecture.
+              <span class="dnerf" style="color: #0047AB;">Cobalt</span> System Architecture.
               <strong>a)</strong> Cloud provider hosts one group of virtual machines (VM) per task, with dynamic allocation of servers based on demand.
               <strong>b)</strong> A load balancer sits in front of the different groups of servers, functioning as a rate limiter and revese proxy.
               <strong>c)</strong> Data pipeline handles secure data storage, data cleaning scripts, and data augmentation.
@@ -183,7 +184,7 @@
             <h2 class="title is-3">Training Curriculum</h2>
             <div class="content has-text-justified">
               <p>
-                To ensure users are prepared for teleoperating simulated robots using <span class="dnerf">Cobalt</span> and to evaluate the effectiveness of different input modalities, we developed a <strong>training curriculum consisting of calibration and evaluation tasks</strong> with the MuJoCo simulation environment.
+                To ensure users are prepared for teleoperating simulated robots using <span class="dnerf" style="color: #0047AB;">Cobalt</span> and to evaluate the effectiveness of different input modalities, we developed a <strong>training curriculum consisting of calibration and evaluation tasks</strong> with the MuJoCo simulation environment.
                 The calibration tasks are designed to familiarize users with basic controls, ensuring they can collect high-quality demonstration data. The position (top left), rotation (bottom left), and pose (top right) tasks ensure that users acquire these fundamental skills.
                 Evaluation tasks introduce accuracy and precision measurements as well as time limits. They also progressively increase in difficulty with each round. The beam task (bottom right) is added to the evaluation task suite. We evaluate trajectories for evaluation tasks using our metrics to assess user data quality.
               </p>
@@ -192,7 +193,7 @@
               <source src="./static/videos/training.mp4" type="video/mp4">
             </video>
             <h2 class="has-text-centered">
-              <span class="dnerf">Cobalt</span> features calibration and evaluation tasks to accelerate user onboarding and boost data quality.
+              <span class="dnerf" style="color: #0047AB;">Cobalt</span> features calibration and evaluation tasks to accelerate user onboarding and boost data quality.
             </h2>
           </div>
         </div>
@@ -301,14 +302,14 @@
             <h2 class="title is-3">Real-World Data Collection</h2>
             <div class="content has-text-justified">
               <p>
-                The <span class="dnerf">Cobalt</span> teleoperation pipeline was <strong>validated on a physical Franka Panda arm</strong> using the Polymetis control library. We achieved low-latency, real-time control by configuring our system to allow a direct connection to a local Polymetis server. Operators guided the Panda through a standard Lift task and we then trained a BC-RNN policy on this data, confirming that phone-based teleoperation generalizes effectively from simulation to real-world hardware with minimal configuration.
+                The <span class="dnerf" style="color: #0047AB;">Cobalt</span> teleoperation pipeline was <strong>validated on a physical Franka Panda arm</strong> using the Polymetis control library. We achieved low-latency, real-time control by configuring our system to allow a direct connection to a local Polymetis server. Operators guided the Panda through a standard Lift task and we then trained a BC-RNN policy on this data, confirming that phone-based teleoperation generalizes effectively from simulation to real-world hardware with minimal configuration.
               </p>
             </div>
             <video id="training" autoplay muted loop playsinline height="100%" style="border-radius:10px">
               <source src="./static/videos/data_collection.mp4" type="video/mp4">
             </video>
             <h2 class="has-text-centered">
-              <span class="dnerf">Cobalt</span> can be used to teleoperate physical robots.
+              <span class="dnerf" style="color: #0047AB;">Cobalt</span> can be used to teleoperate physical robots.
             </h2>
           </div>
         </div>
@@ -329,11 +330,6 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="content has-text-centered">
-          <a class="icon-link" href="https://github.com/cobalt-teleop/cobalt-teleop.github.io" class="external-link" disabled>
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
         <div class="columns is-centered">
           <div class="column is-8">
             <div class="content">
