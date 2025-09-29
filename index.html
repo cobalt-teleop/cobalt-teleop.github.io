@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/styles.css">
     <link rel="icon" href="./static/images/favicon.ico">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,6 +23,7 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
+    <script src="./static/js/scripts.js"></script>
   </head>
 
   <body>
@@ -126,8 +128,66 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section has-background-light" style="padding: 1.5rem 0;">
       <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="box" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+
+              <!-- Toggle Header -->
+              <div id="cobalt-toggle" 
+                  class="is-flex is-justify-content-space-between is-align-items-center"
+                  style="cursor: pointer; font-size: 1.1rem; font-weight: 500; color:#0047AB;">
+                <span>Try COBALT Now</span>
+                <span id="caret-icon" style="transition: transform 0.3s;">&#9662;</span>
+              </div>
+
+              <div id="divider" style="height:1px; background:#ddd; margin:0.75rem 0; display:none;"></div>
+
+              <div id="demo-setup-content" class="content has-text-justified" style="display:none;">            
+                <p>
+                  The Android app for <span style="color: #0047AB; font-weight: 600;">COBALT</span> can be downloaded 
+                  <a href="https://drive.google.com/file/d/1SGaMf3Tlsd9CPKaIdOBfprL2U3itID2a/view?usp=drive_link" style="color:#0047AB; text-decoration: underline;">here</a>.  
+                  (Google Play Store and Apple App Store versions include identifying information and are therefore unavailable during the anonymous review period.)
+                </p>
+
+                <h2 class = "title is-5" style="color:#0047AB; margin-top: 1.2em;">App Installation and Setup</h2>
+                <ol>
+                  <li>Download and install the 
+                    <a href="https://drive.google.com/file/d/1SGaMf3Tlsd9CPKaIdOBfprL2U3itID2a/view?usp=drive_link" style="color:#0047AB;">COBALT app</a> 
+                    on your smartphone.
+                  </li>
+                  <li>Open the app and select <b>Connect</b>.</li>
+                  <li>The device will connect to the teleoperation server and display a unique <b>Session ID</b>.</li>
+                </ol>
+
+                <h2 class="title is-5" style="color:#0047AB; margin-top: 1.2em;">Connecting to the Media Stream</h2>
+                <ol>
+                  <li>On a laptop, open a web browser and navigate to: 
+                    <a href="http://143.215.185.88:3000" target="_blank" style="color:#0047AB; text-decoration: underline;">
+                      http://143.215.185.88:3000
+                    </a>
+                  </li>
+                  <li>Enter the <b>Host IP</b>: <code>143.215.185.88</code></li>
+                  <li>Enter the <b>Session ID</b> displayed on your phone.</li>
+                  <li>Select <b>Start Stream</b>.</li>
+                  <li>The simulation stream will load with the <b>Lift</b> task ready for teleoperation.</li>
+                </ol>
+
+                <h2 class="title is-5" style="color:#0047AB; margin-top: 1.2em;">Teleoperation Controls</h2>
+                <ul>
+                  <li>Select <b>Enable Control</b> to begin teleoperation using your phone's motion.</li>
+                  <li>Use <b>Grasp</b>, <b>Reset</b>, and <b>Disable Control</b> as required during the task.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Abstract</h2>
