@@ -40,7 +40,7 @@
                 <span class="author-block">
                     <a href="https://ansh.pro/">Ansh Gandhi</a><sup>1,2*</sup>,
                 </span>
-              <span class="author-block">
+                <span class="author-block">
                   <a href="https://jeremy-collins.github.io/">Jeremy A. Collins</a><sup>1</sup>,
                 </span>
                 <span class="author-block">
@@ -66,7 +66,7 @@
               <div class="is-size-5 publication-authors">
                 <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span>
                 <span class="author-block"><sup>2</sup>University of California, Berkeley,</span>
-                <span class="author-block"><sup>3</sup>University of California, Los Angeles,</span>
+                <span class="author-block"><sup>3</sup>New York University Abu Dhabi (NYUAD),</span>
                 <span class="author-block"><sup>4</sup>University of Toronto,</span>
                 <span class="author-block"><sup>5</sup>NVIDIA</span>
               </div>
@@ -79,10 +79,10 @@
                 <span class="author-block" style="color: #FF0000;">ICRA 2026</span>
               </div>
 
-              <!-- <div class="column has-text-centered">
+              <div class="column has-text-centered">
                 <div class="publication-links">
                   <span class="link-block">
-                    <a href="https://arxiv.org"
+                    <a href="paper.pdf"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -109,7 +109,7 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://github.com/cobalt-teleop/cobalt-teleop.github.io"
+                    <a href="https://github.com/pairlab/COBALT"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
@@ -117,7 +117,7 @@
                       <span>Code</span>
                     </a>
                   </span>
-                  <span class="link-block">
+                  <!-- <span class="link-block">
                     <a href="https://huggingface.co/huggingface"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -125,9 +125,9 @@
                       </span>
                       <span>Data</span>
                     </a>
-                  </span>
+                  </span> -->
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
@@ -212,7 +212,7 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                The scarcity of large-scale, high-quality demonstration data remains a bottleneck in scaling imitation learning for robotic manipulation. We present <span class="dnerf" style="color: #0047AB;">Cobalt</span>, a teleoperation platform designed to alleviate this bottleneck and democratize robot learning at scale both in simulation and in the real world. By leveraging vectorized environments, our scalable, load-balanced infrastructure supports concurrent teleoperation by multiple users on a single GPU. Operators can connect from nearly anywhere on Earth using commonly available devices, including single- or dual-smartphones, VR headsets, 3D mice, and keyboards. An in-memory data cache and WebRTC video streaming keep control and rendering synchronous, sustaining dozens of concurrent users at 20 Hz with sub-100 ms end-to-end latency. We demonstrate concurrent support for 256 clients across 8 GPUs, underscoring the system's ability to scale both horizontally across hardware and within individual servers. We perform a comprehensive user study showing that phone-based teleoperation performs comparably or better than specialized hardware, enabling faster, more ergonomic data collection. To ensure data quality, <span class="dnerf" style="color: #0047AB;">Cobalt</span> logs a suite of real-time metrics to filter suboptimal demonstrations automatically. We further demonstrate that a structured user training curriculum significantly improves task success and downstream behavior cloning performance. Guided by insights from our user study, we crowdsource the collection of a large-scale, high-quality pilot dataset with 7500+ demonstrations (50+ hours) collected with smartphones across nine countries over 5 days. We validate its quality by training state-of-the-art imitation learning algorithms.
+                The scarcity of large-scale, high-quality demonstration data remains a bottleneck in scaling imitation learning for robotic manipulation. We present <span class="dnerf" style="color: #0047AB;">Cobalt</span>, a teleoperation platform designed to democratize robot learning at scale both in simulation and in the real world. By leveraging vectorized environments, our scalable, load-balanced infrastructure supports concurrent teleoperation by multiple users on a single GPU, yielding a significant reduction in teleoperation cost. Operators can connect from nearly anywhere on Earth using commonly available devices, including single or dual smartphones, VR headsets, 3D mice, and keyboards. An in-memory data cache and efficient video streaming keep control and rendering synchronous, sustaining dozens of concurrent users at 20 Hz with sub-100 ms end-to-end latency for up to 8 concurrent users per GPU. We also demonstrate stable operation supporting 256 simulated clients across 8 GPUs, underscoring the system's ability to scale across hardware and within individual servers. We perform a comprehensive user study showing that phone-based teleoperation performs comparably to or better than specialized hardware, enabling faster, more ergonomic data collection. To ensure data quality, <span class="dnerf" style="color: #0047AB;">Cobalt</span> logs a suite of real-time metrics to automatically filter suboptimal demonstrations. We further demonstrate that a structured user training curriculum significantly improves data collection quality. Guided by insights from our user study, we crowdsource the collection of a large-scale, high-quality pilot dataset with 7500+ demonstrations (50+ hours) collected with smartphones across nine countries over five days. We validate the dataset's quality by training state-of-the-art imitation learning algorithms.
               </p>
             </div>
           </div>
@@ -395,17 +395,17 @@
       </div>
     </section>
 
-    <!-- <section class="section" id="BibTeX">
+    <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@article{park2021nerfies,
-      author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-      title     = {Nerfies: Deformable Neural Radiance Fields},
-      journal   = {ICCV},
-      year      = {2021},
-    }</code></pre>
+        <pre><code>@inproceedings{agarwal2026cobalt,
+  author    = {Agarwal, Ayush and Gandhi, Ansh and Collins, Jeremy and Rayyan, Omar and Sarswat, Aryan and Koushik, Ranjani and Moghani, Masoud and Mandlekar, Ajay and Garg, Animesh},
+  title     = {COBALT: Crowdsourcing Robot Learning via Cloud-Based Teleoperation with Smartphones},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  year      = {2026},
+}</code></pre>
       </div>
-    </section> -->
+    </section>
 
     <footer class="footer">
       <div class="container">
